@@ -1,0 +1,117 @@
+
+.digitalfont {
+  font-family: 'Orbitron', sans-serif;
+}
+#beep {
+  display: hidden;
+}
+
+button {
+  background: hsl(9, 100%, 74%);
+  border-radius: 8px;
+}
+
+.label {
+  font-size: 20px;
+  font-family: courier;
+}
+
+button:focus, input[type="button"]:focus {
+  outline: none;
+}
+
+.increment {
+  width: 60px;
+}
+
+.length {
+  background-color: white;
+  width: 50px;
+  margin: 0 auto;
+}
+
+#pomodoro-clock {
+  background-color: Tomato;
+  padding: 20px;
+  border-radius: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-rows: 100px 75px 50px;
+  grid-template-columns: 200px 200px;
+  grid-template-areas: "breakLength sessionLength"
+                       "timer timer"
+                       "controls controls";
+}
+
+#Break {
+  grid-area: breakLength;
+  justify-self: center;
+  text-align: center;
+}
+
+#button-wrapper {
+  
+}
+
+#Session {
+  grid-area: sessionLength;
+  justify-self: center;
+  text-align: center;
+}
+
+#Timer {
+  grid-area: timer;
+  justify-self: center;
+  text-align: center;
+}
+
+#Controls {
+  padding-top: 20px;
+  grid-area: controls;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#start_stop {
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+#time-left {
+  text-align: center;
+  margin-top: 5px;
+  padding: 10px;
+  font-size: 35px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+#break-label {
+  padding-bottom: 5px;  
+}
+
+#session-label {
+  padding-bottom: 5px;
+}
+
+@media (max-width: 480px) {
+  #pomodoro-clock {
+    grid-template-rows: 100px 75px 75px;
+    grid-template-columns: 50% 50%;
+  }
+  
+  #Timer {
+    margin-top: 10px;
+  }  
+  
+  .label {
+    font-size: 15px;
+    font-family: courier;
+  }
+
+}
